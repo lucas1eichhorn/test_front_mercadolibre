@@ -32,6 +32,7 @@ class ListadoProductos extends Component {
             return null;
         }
     }
+
     render() {
 
         return (
@@ -40,7 +41,8 @@ class ListadoProductos extends Component {
 
                 <div className="container">
                     <Breadcrumbs categories={this.props.categories} />
-                    <div className="row product-list">
+                    <div className="product-list">
+
                         {Object.keys(this.props.productos).map(producto => (
                             <Producto info={this.props.productos[producto]} key={producto} />
                         ))}

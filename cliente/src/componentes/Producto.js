@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Producto.sass'
+import { number_format } from '../helpers/helpers'
 
 const Producto = (props) => {
     console.log("producto", props.info);
@@ -12,32 +13,35 @@ const Producto = (props) => {
             return null;
         }
     }
+
+
     return (
-        <div className="col-lg-12">
-            <div className="card">
-                <div className="card-body">
-                    <div className="row">
-                        <div className="img-item-list-container">
-                            <Link to={`/items/${id}`}><img className="card-img-top img-item-list" src={picture} alt={title} /></Link>
+
+        <div className="card">
+            <div className="card-body">
+                <div className="row">
+                    <div className="img-item-list-container">
+                        <Link to={`/items/${id}`}><img className=" img-item-list" src={picture} alt={title} /></Link>
+
+                    </div>
+                    <div className="col text-col">
+                        <div className="price">
+                            <h5 className="price">{price.currency} {number_format(price.amount)}   </h5>
+                            {show_free_shipping()}
 
                         </div>
-                        <div className="col text-col">
-                            <div className="price"> 
-                            <h5 className="price">{price.currency} {price.amount}   </h5>
-                                {show_free_shipping()}
-                                </div>
 
-                            <Link to={`/items/${id}`}>
-                                <p className="card-text item-title">{title}</p>
-                            </Link>
-                        </div>
-                        <div className="col text-col">
-                            <p className="card-text address-text">{address.state_name}</p>
-                        </div>
+                        <Link to={`/items/${id}`}>
+                            <p className="card-text item-title">{title}</p>
+                        </Link>
+                    </div>
+                    <div className="col text-col">
+                        <p className="card-text address-text">{address.state_name}</p>
                     </div>
                 </div>
-
             </div>
+
+            <hr></hr>
         </div>
 
     )

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import './ProductoDetalle.sass';
 import Breadcrumbs from './Breadcrumbs';
-
 import Buscador from './Buscador';
+import { number_format } from '../helpers/helpers'
 
 class ProductoDetalle extends Component {
 
@@ -53,9 +53,9 @@ class ProductoDetalle extends Component {
 
                         <div className="col-lg-12">
 
-                            <div className="card">
+                            <div className="card item-detalle">
                                 <div className="card-body">
-                                    <div className="row">
+                                    <div className="producto-container">
                                         <div className="col-lg-9">
                                             <div className="row">
                                                 <div className="img-container">
@@ -63,18 +63,18 @@ class ProductoDetalle extends Component {
                                                 </div>
                                             </div>
                                             <div className="row">
-                                                <div className="col-lg-12">
-                                                    <p className="title">Descripción del producto </p>
-                                                    <p className="product-description">{description}</p>
-                                                </div>
+                                                <p className="desciption-title">Descripción del producto </p>
+                                                <p className="product-description">{description}</p>
                                             </div>
                                         </div>
                                         <div className="col-lg-3">
-                                            <span>{condition} - {sold_quantity} vendidos</span>
-                                            <h5>{price.currency} {price.amount}</h5>
-                                            <p className="card-text">{title}
-                                            </p>
-                                            <button className="btn btn-block btn-primary">Comprar</button>
+                                            <span className="condition">{condition} - {sold_quantity} vendidos</span>
+                                            <h5 className="card-text title">{title}</h5>
+                                            <h3 className="price">{price.currency} {number_format(price.amount)}</h3>
+                                            <div className="comprar-btn">
+                                                <button className="btn btn-block">Comprar</button>
+                                            </div>
+
                                         </div>
 
                                     </div>
