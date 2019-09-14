@@ -50,7 +50,7 @@ class Buscador extends Component {
                         </Link>
 
                         <div className="collapse navbar-collapse">
-                            <div className="input-group mb-3">
+                            <div className="input-group">
 
                                 <input type="text" className="form-control" value={this.state.terminoBusqueda || ''} placeholder="Nunca dejes de buscar" onChange={this.leerDatos} onKeyPress={this.handleKeyPress} />
                                 <div className="input-group-prepend">

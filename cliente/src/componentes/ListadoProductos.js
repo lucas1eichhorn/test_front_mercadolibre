@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Producto from './Producto';
-import './ListadoProductos.sass';
 
 import Breadcrumbs from './Breadcrumbs';
 import Buscador from './Buscador';
 
+import './ListadoProductos.sass';
 
 
 class ListadoProductos extends Component {
@@ -40,7 +40,7 @@ class ListadoProductos extends Component {
 
                 <div className="container">
                     <Breadcrumbs categories={this.props.categories} />
-                    <div className="row">
+                    <div className="row product-list">
                         {Object.keys(this.props.productos).map(producto => (
                             <Producto info={this.props.productos[producto]} key={producto} />
                         ))}
