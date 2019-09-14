@@ -22,7 +22,7 @@ Responde a los endpoints:
 
 
 **Observaciones!**
-- El campo currency al consultar la **API** devuelve ARS, pero para su presentación n se convierte al carácter $
+- El campo currency al consultar la **API** devuelve ARS, pero para su presentación se convierte al carácter $
 - No de encuentra el campo con decimales  en price dentro de la respuesta, por lo que se hardcodean 0.0 como valor.
 - Como campo por defecto en la búsqueda se deja la query `undefined` para para que obtener resultados aleatorios cuando aún no se completó el buscador.
 - El listado de categorías de obtiene del campo `filters` en la respuesta de la **API**. Los breadcrumbs muestran las categorías una vez ingresada una query de búsqueda, y estas se pasan al componente hijo al visualizar el detalle. Cuándo se ingresa mediante la URL particular al detalle de un item no se obtiene el campo `filters` en la respuesta de la **API** para el detalle de un item para mostrar los categorías
